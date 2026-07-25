@@ -8,5 +8,3 @@ public enum UserRole {
     ROLE_STORE_MANAGER
 
 }
-
-// Role hierarchy for multi-tenant POS
