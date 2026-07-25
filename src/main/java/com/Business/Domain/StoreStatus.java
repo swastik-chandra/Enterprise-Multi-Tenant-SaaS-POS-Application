@@ -5,3 +5,5 @@ public enum StoreStatus {
     PENDING,
     BLOCKED
 }
+
+// Store lifecycle status
