@@ -1,6 +1,7 @@
 package com.Business.Model;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.Email;
 import lombok.Data;
 
 @Data
@@ -8,4 +9,7 @@ import lombok.Data;
 public class StoreContact {
     private String address;
     private String phone;
+
+    @Email(message = "invalid email format ")
+    private String email;
 }
