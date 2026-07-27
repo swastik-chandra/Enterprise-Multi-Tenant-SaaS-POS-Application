@@ -1,5 +1,6 @@
 package com.Business.Model;
 
+import com.Business.Domain.StoreStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,6 +18,8 @@ public class Store {
 
     private String Description;
     private String storeType;
-}
 
-// Store entity mapped to PostgreSQL
+    private StoreStatus Status;
+    @Embedded
+    private StoreContact contact = new StoreContact();
+}
