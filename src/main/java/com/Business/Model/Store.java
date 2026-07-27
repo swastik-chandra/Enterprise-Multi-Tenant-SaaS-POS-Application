@@ -18,3 +18,5 @@ public class Store {
     private String Description;
     private String storeType;
 }
+
+// Store entity mapped to PostgreSQL
