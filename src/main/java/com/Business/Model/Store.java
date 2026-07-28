@@ -33,4 +33,8 @@ public class Store {
         createdAt = LocalDateTime.now();
         Status=StoreStatus.PENDING;
     }
+    @PreUpdate
+    protected void onUpdate(){
+        updatedAt = LocalDateTime.now();
+    }
 }
