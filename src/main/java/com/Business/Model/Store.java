@@ -27,4 +27,10 @@ public class Store {
     private StoreStatus Status;
     @Embedded
     private StoreContact contact = new StoreContact();
+
+    @PrePersist
+    protected void onCreate(){
+        createdAt = LocalDateTime.now();
+        Status=StoreStatus.PENDING;
+    }
 }
