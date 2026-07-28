@@ -4,6 +4,8 @@ import com.Business.Domain.StoreStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter@Setter
 @AllArgsConstructor
@@ -15,6 +17,9 @@ public class Store {
 
     @Column(nullable = false)
     private String brand;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     private String Description;
     private String storeType;
