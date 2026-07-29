@@ -24,3 +24,5 @@ public class User {
 
     private String phone;
 }
+
+// User security credentials
