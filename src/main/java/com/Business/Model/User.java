@@ -1,5 +1,6 @@
 package com.Business.Model;
 
+import com.Business.Domain.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -23,6 +24,9 @@ public class User {
     private String email;
 
     private String phone;
-}
 
-// User security credentials
+    @Column(nullable = false)
+    private UserRole role;
+    @Column(nullable = false)
+    private String password;
+}
