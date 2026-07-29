@@ -1,6 +1,7 @@
 package com.Business.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 @Getter
@@ -18,5 +19,8 @@ public class User {
     private String fullName;
 
     @Column(nullable = false, unique = true)
+    @Email(message = "Email should be valid ")
     private String email;
+
+    private String phone;
 }
