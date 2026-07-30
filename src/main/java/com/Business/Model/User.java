@@ -5,13 +5,17 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity
-@Table(name = "users")
+@Table(name = "users")   // ✅ bas ye change karna hai
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,6 +36,12 @@ public class User {
     private UserRole role;
     @Column(nullable = false)
     private String password;
+
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime lastLogin;
+
+
 }
 
-// Audit timestamps for user session
