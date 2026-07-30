@@ -19,6 +19,9 @@ public class Store {
     @Column(nullable = false)
     private String brand;
 
+    @OneToOne
+    private User storeAdmin;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -27,7 +30,7 @@ public class Store {
 
     private StoreStatus Status;
     @Embedded
-    private StoreContact contact = new StoreContact();
+    private  StoreContact contact= new StoreContact();
 
     @PrePersist
     protected void onCreate(){
@@ -38,4 +41,5 @@ public class Store {
     protected void onUpdate(){
         updatedAt = LocalDateTime.now();
     }
+
 }
