@@ -33,3 +33,5 @@ public class User {
     @Column(nullable = false)
     private String password;
 }
+
+// Audit timestamps for user session
