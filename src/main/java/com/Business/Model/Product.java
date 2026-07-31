@@ -18,4 +18,8 @@ public class Product {
 
     @Column(nullable = false, unique = true)
     private String sku;
+
+    private String description;
+    private double mrp;
+    private double sellingPrice;
 }
