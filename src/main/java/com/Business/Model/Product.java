@@ -31,3 +31,5 @@ public class Product {
     @ManyToOne
     private Store store;
 }
+
+// Multi-tenant product entity
