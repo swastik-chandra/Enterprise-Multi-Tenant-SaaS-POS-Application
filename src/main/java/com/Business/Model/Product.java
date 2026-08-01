@@ -3,11 +3,14 @@ package com.Business.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,17 +22,40 @@ public class Product {
     @Column(nullable = false, unique = true)
     private String sku;
 
+
     private String description;
+
     private double mrp;
+
     private double sellingPrice;
     private String brand;
     private String image;
-
     @ManyToOne
     private Category category;
 
     @ManyToOne
     private Store store;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    @PrePersist
+    protected void onCreate(){
+        createdAt = LocalDateTime.now();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        updatedAt = LocalDateTime.now();
+    }
+
+
 }
 
-// Multi-tenant product entity
+
+
+
+
+
+
+
+
+
+
