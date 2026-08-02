@@ -5,5 +5,3 @@ public class UserException extends Exception {
         super(message);
     }
 }
-
-// Custom exception for user domain
