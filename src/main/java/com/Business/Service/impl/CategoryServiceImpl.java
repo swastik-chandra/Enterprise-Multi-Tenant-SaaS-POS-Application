@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -35,7 +36,41 @@ public class CategoryServiceImpl implements CategoryService {
                 .build();
 
         checkAuthority(user , category.getStore());
+
         return CategoryMapper.toDTO(categoryRepository.save(category));
+    }
+
+    @Override
+    public List<CategoryDTO> getCategoryByStore(Long storeId) {
+        List<Category> categories = categoryRepository.findByStoreId(storeId);
+        return categories.stream()
+                .map(
+                        CategoryMapper::toDTO
+                ).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public CategoryDTO updateCategory(Long id, CategoryDTO dto) throws Exception {
+        Category category = categoryRepository.findById(id).orElseThrow(
+                () -> new Exception(" category not exist")
+        );
+        User user = userService.getCurrentUser();
+        category.setName(dto.getName());
+        checkAuthority(user, category.getStore());
+        return CategoryMapper.toDTO(categoryRepository.save(category));
+    }
+
+    @Override
+    public void deleteCategory(Long id) throws Exception {
+        Category category = categoryRepository.findById(id).orElseThrow(
+                () -> new Exception(" category not exist")
+        );
+        User user = userService.getCurrentUser();
+
+        checkAuthority(user, category.getStore());
+        categoryRepository.delete(category);
+
     }
 
     private void checkAuthority(User user, Store store) throws Exception {
@@ -48,10 +83,5 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    @Override
-    public List<CategoryDTO> getCategoryByStore(Long storeId) { return List.of(); }
-    @Override
-    public CategoryDTO updateCategory(Long id, CategoryDTO dto) throws Exception { return null; }
-    @Override
-    public void deleteCategory(Long id) throws Exception {}
+
 }
