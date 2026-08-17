@@ -109,3 +109,4 @@ public class StoreServiceImpl implements StoreService {
 
 // Day 28 audit checkpoint A
 // Day 28 audit checkpoint B
+// Day 28 audit checkpoint C
