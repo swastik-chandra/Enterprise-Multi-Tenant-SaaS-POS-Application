@@ -85,7 +85,3 @@ public class CategoryServiceImpl implements CategoryService {
 
 
 }
-
-// Day 30 audit checkpoint A
-// Day 30 audit checkpoint B
-// Day 30 audit checkpoint C
