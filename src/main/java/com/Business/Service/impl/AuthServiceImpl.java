@@ -107,7 +107,3 @@ public class AuthServiceImpl implements AuthService {
                 userDetails,null,userDetails.getAuthorities());
     }
 }
-
-// Day 31 audit checkpoint A
-// Day 31 audit checkpoint B
-// Day 31 audit checkpoint C
