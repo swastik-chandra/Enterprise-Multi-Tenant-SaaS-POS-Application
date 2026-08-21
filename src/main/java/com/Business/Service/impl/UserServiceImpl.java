@@ -62,7 +62,3 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 }
-
-// Day 32 audit checkpoint A
-// Day 32 audit checkpoint B
-// Day 32 audit checkpoint C
