@@ -86,7 +86,3 @@ public class ProductController {
     }
 
 }
-
-// Day 34 audit checkpoint A
-// Day 34 audit checkpoint B
-// Day 34 audit checkpoint C
