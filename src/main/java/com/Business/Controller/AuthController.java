@@ -39,3 +39,4 @@ public class AuthController {
 
 // Day 36 audit checkpoint A
 // Day 36 audit checkpoint B
+// Day 36 audit checkpoint C
