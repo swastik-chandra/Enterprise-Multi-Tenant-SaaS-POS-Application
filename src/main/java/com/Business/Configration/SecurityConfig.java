@@ -65,6 +65,3 @@ public class SecurityConfig {
         };
     }
 }
-// Day 38 audit checkpoint A
-// Day 38 audit checkpoint B
-// Day 38 audit checkpoint C
