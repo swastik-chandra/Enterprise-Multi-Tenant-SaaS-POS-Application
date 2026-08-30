@@ -43,7 +43,3 @@ public class Store {
     }
 
 }
-
-// Day 41 audit checkpoint A
-// Day 41 audit checkpoint B
-// Day 41 audit checkpoint C
