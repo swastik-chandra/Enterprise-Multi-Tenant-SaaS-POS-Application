@@ -43,3 +43,5 @@ public class Store {
     }
 
 }
+
+// Day 41 audit checkpoint A
