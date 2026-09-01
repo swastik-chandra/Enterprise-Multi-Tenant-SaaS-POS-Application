@@ -45,7 +45,3 @@ public class User {
 
 }
 
-
-// Day 43 audit checkpoint A
-// Day 43 audit checkpoint B
-// Day 43 audit checkpoint C
