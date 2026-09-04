@@ -93,7 +93,3 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 }
-
-// Day 46 audit checkpoint A
-// Day 46 audit checkpoint B
-// Day 46 audit checkpoint C
