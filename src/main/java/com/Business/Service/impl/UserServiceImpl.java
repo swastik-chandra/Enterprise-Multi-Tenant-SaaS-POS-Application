@@ -65,3 +65,4 @@ public class UserServiceImpl implements UserService {
 
 // Day 49 audit checkpoint A
 // Day 49 audit checkpoint B
+// Day 49 audit checkpoint C
