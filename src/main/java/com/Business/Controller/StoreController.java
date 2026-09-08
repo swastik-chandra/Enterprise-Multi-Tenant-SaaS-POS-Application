@@ -81,7 +81,3 @@ public class StoreController {
     }
 
 }
-
-// Day 50 audit checkpoint A
-// Day 50 audit checkpoint B
-// Day 50 audit checkpoint C
