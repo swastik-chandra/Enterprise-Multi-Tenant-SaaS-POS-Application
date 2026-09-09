@@ -89,3 +89,4 @@ public class ProductController {
 
 // Day 51 audit checkpoint A
 // Day 51 audit checkpoint B
+// Day 51 audit checkpoint C
