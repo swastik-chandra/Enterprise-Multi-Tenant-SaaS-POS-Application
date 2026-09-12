@@ -33,3 +33,5 @@ public class UserController {
         return ResponseEntity.ok(UserMapper.toDTO(user));
     }
 }
+
+// Day 54 audit checkpoint A
