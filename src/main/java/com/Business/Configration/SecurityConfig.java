@@ -65,6 +65,3 @@ public class SecurityConfig {
         };
     }
 }
-// Day 55 audit checkpoint A
-// Day 55 audit checkpoint B
-// Day 55 audit checkpoint C
