@@ -58,3 +58,4 @@ public class JwtProvider {
 }
 
 // Day 56 audit checkpoint A
+// Day 56 audit checkpoint B
