@@ -64,7 +64,3 @@ public class JwtValidator extends OncePerRequestFilter {
 
     }
 }
-
-// Day 57 audit checkpoint A
-// Day 57 audit checkpoint B
-// Day 57 audit checkpoint C
