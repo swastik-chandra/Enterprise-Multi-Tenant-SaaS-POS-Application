@@ -61,3 +61,4 @@ public class Product {
 
 
 // Day 59 audit checkpoint A
+// Day 59 audit checkpoint B
