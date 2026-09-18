@@ -48,3 +48,4 @@ public class User {
 
 // Day 60 audit checkpoint A
 // Day 60 audit checkpoint B
+// Day 60 audit checkpoint C
