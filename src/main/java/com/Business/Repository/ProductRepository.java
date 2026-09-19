@@ -24,3 +24,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 }
 
 // Day 61 audit checkpoint A
+// Day 61 audit checkpoint B
