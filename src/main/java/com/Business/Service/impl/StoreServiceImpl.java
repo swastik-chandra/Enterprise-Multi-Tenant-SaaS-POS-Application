@@ -106,7 +106,3 @@ public class StoreServiceImpl implements StoreService {
         return StoreMapper.toDTO(updatedStore);
     }
 }
-
-// Day 62 audit checkpoint A
-// Day 62 audit checkpoint B
-// Day 62 audit checkpoint C
