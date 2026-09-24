@@ -62,3 +62,5 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 }
+
+// Day 66 audit checkpoint A
