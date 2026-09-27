@@ -50,7 +50,3 @@ public class CategoryController {
     }
 
 }
-
-// Day 69 audit checkpoint A
-// Day 69 audit checkpoint B
-// Day 69 audit checkpoint C
