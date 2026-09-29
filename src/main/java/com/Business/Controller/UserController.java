@@ -36,3 +36,4 @@ public class UserController {
 
 // Day 71 audit checkpoint A
 // Day 71 audit checkpoint B
+// Day 71 audit checkpoint C
