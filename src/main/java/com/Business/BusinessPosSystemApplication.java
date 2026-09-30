@@ -11,5 +11,3 @@ public class BusinessPosSystemApplication {
 	}
 
 }
-
-// Production release
