@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
                 .name(dto.getName())
                 .build();
 
-        checkAuthority(user , category.getStore());
+        checkAuthority(user, category.getStore());
 
         return CategoryMapper.toDTO(categoryRepository.save(category));
     }
@@ -70,18 +70,14 @@ public class CategoryServiceImpl implements CategoryService {
 
         checkAuthority(user, category.getStore());
         categoryRepository.delete(category);
-
     }
-
-    private void checkAuthority(User user, Store store) throws Exception {
+        private void checkAuthority(User user, Store store) throws Exception {
         boolean isAdmin = user.getRole().equals(UserRole.ROLE_STORE_ADMIN);
         boolean isManager = user.getRole().equals(UserRole.ROLE_STORE_MANAGER);
         boolean isSameStore = user.equals(store.getStoreAdmin());
 
         if (!(isAdmin && isSameStore) && !isManager) {
-            throw new Exception("you don't  have permission to manage this category ");
+            throw new Exception("you don't have permission to manage this category ");
         }
     }
-
-
 }

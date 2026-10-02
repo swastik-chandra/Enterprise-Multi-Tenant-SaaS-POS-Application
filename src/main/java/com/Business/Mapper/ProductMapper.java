@@ -6,7 +6,7 @@ import com.Business.Model.Store;
 import com.Business.PayLoad.Dto.ProductDTO;
 
 public class ProductMapper {
-    public  static ProductDTO toDTO(Product product){
+    public static ProductDTO toDTO(Product product) {
         return ProductDTO.builder()
                 .id(product.getId())
                 .name(product.getName())
@@ -15,25 +15,27 @@ public class ProductMapper {
                 .mrp(product.getMrp())
                 .sellingPrice(product.getSellingPrice())
                 .brand(product.getBrand())
-                .storeId(product.getStore()!= null? product.getStore().getId(): null)
+                .category(CategoryMapper.toDTO(product.getCategory()))
+                .storeId(product.getStore() != null ? product.getStore().getId() : null)
                 .image(product.getImage())
                 .createdAt(product.getCreatedAt())
                 .updatedAt(product.getUpdatedAt())
                 .build();
-         //       .categoryId(product.ge())
+        //       .categoryId(product.ge())
     }
+
     public static Product toEntity(ProductDTO productDTO,
                                    Store store,
-                                   Category category){
-return Product.builder()
-        .name(productDTO.getName())
-        .store(store)
-        .category(category)
-        .sku(productDTO.getSku())
-        .description(productDTO.getDescription())
-        .mrp(productDTO.getMrp())
-        .brand(productDTO.getBrand())
-        .sellingPrice(productDTO.getSellingPrice())
-        .build();
+                                   Category category) {
+        return Product.builder()
+                .name(productDTO.getName())
+                .store(store)
+                .category(category)
+                .sku(productDTO.getSku())
+                .description(productDTO.getDescription())
+                .mrp(productDTO.getMrp())
+                .brand(productDTO.getBrand())
+                .sellingPrice(productDTO.getSellingPrice())
+                .build();
     }
 }

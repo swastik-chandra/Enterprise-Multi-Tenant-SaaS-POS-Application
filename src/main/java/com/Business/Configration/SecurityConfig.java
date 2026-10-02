@@ -35,7 +35,8 @@ public class SecurityConfig {
                         BasicAuthenticationFilter.class
                 ).csrf(AbstractHttpConfigurer::disable)
                 .cors(
-                        cors -> cors.configurationSource(corsConfigrationSource())
+                        cors -> cors.configurationSource(
+                                corsConfigrationSource())
                 ).build();
     }
 

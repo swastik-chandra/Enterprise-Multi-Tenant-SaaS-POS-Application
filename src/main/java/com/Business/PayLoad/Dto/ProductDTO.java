@@ -24,7 +24,7 @@ public class ProductDTO {
     private String brand;
     private String image;
 
-//    private Category category;
+   private CategoryDTO category;
 
     private Long categoryId;
 

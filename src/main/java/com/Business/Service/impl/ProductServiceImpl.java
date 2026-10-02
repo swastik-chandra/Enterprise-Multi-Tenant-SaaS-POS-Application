@@ -32,12 +32,15 @@ public class ProductServiceImpl implements ProductService {
         ).orElseThrow(
                 () -> new Exception("Store Not Found ")
         );
+
         Category category = categoryRepository.findById(
                 productDTO.getCategoryId()
         ).orElseThrow(
                 () -> new Exception("Category Not Found")
         );
+
         Product product = ProductMapper.toEntity(productDTO, store, category);
+
         Product savedProduct = productRepository.save(product);
         return ProductMapper.toDTO(savedProduct);
     }
@@ -48,13 +51,6 @@ public class ProductServiceImpl implements ProductService {
                 () -> new Exception("product is not found ")
         );
 
-        Category category = categoryRepository.findById(
-                productDTO.getCategoryId()
-        ).orElseThrow(
-                () -> new Exception("Category Not Found")
-        );
-
-
         product.setName(productDTO.getName());
         product.setDescription(product.getDescription());
         product.setSku(product.getSku());
@@ -63,6 +59,16 @@ public class ProductServiceImpl implements ProductService {
         product.setSellingPrice(product.getSellingPrice());
         product.setBrand(product.getBrand());
         product.setUpdatedAt(LocalDateTime.now());
+
+        if(productDTO.getCategoryId()!= null ){
+            Category category = categoryRepository.findById(
+                    productDTO.getCategoryId()
+            ).orElseThrow(
+                    () -> new Exception("Category Not Found")
+            );
+            product.setCategory(category);
+
+        }
         Product savedProduct = productRepository.save(product);
         return null;
     }
@@ -78,7 +84,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getProductByStoreId(Long storeId) {
-
         List<Product> products = productRepository.findByStoreId(storeId);
         return products.stream()
                 .map(ProductMapper::toDTO)
