@@ -19,9 +19,10 @@ public class ProductController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<ProductDTO> create(@RequestBody ProductDTO productDTO,
-                                             @RequestHeader("Authorization")
-                                             String jwt) throws Exception {
+    public ResponseEntity<ProductDTO> create(
+            @RequestBody ProductDTO productDTO,
+            @RequestHeader("Authorization")
+            String jwt) throws Exception {
         User user = userService.getUserFromJwtToken(jwt);
 
         return ResponseEntity.ok(
@@ -35,7 +36,8 @@ public class ProductController {
     @GetMapping("/store/{storeId}")
     public ResponseEntity<List<ProductDTO>> getByStoreId(
             @PathVariable Long storeId,
-            @RequestHeader("Authorization") String jwt) throws Exception {
+            @RequestHeader("Authorization")
+            String jwt) throws Exception {
 
         return ResponseEntity.ok(productService
                 .getProductByStoreId(storeId
@@ -44,10 +46,11 @@ public class ProductController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<ProductDTO> update(@PathVariable Long id,
-                                             @RequestBody ProductDTO productDTO,
-                                             @RequestHeader("Authorization")
-                                             String jwt) throws Exception {
+    public ResponseEntity<ProductDTO> update(
+            @PathVariable Long id,
+            @RequestBody ProductDTO productDTO,
+            @RequestHeader("Authorization")
+            String jwt) throws Exception {
         User user = userService.getUserFromJwtToken(jwt);
         return ResponseEntity.ok(
                 productService.updateProduct(id,
@@ -56,6 +59,7 @@ public class ProductController {
                 )
         );
     }
+
     @GetMapping("/store/{storeId}/search")
     public ResponseEntity<List<ProductDTO>> searchByKeyword(
             @PathVariable Long storeId,
@@ -69,8 +73,9 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse> deleteProduct(@PathVariable Long id,
-                                                     @RequestHeader("Authorization") String jwt) throws Exception {
+    public ResponseEntity<ApiResponse> deleteProduct(
+            @PathVariable Long id,
+            @RequestHeader("Authorization") String jwt) throws Exception {
         User user = userService.getUserFromJwtToken(jwt);
         productService.deleteProduct(
                 id,

@@ -47,30 +47,35 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO updateProduct(Long id, ProductDTO productDTO, User user) throws Exception {
-        Product product = productRepository.findById(id).orElseThrow(
-                () -> new Exception("product is not found ")
-        );
+
+        Product product = productRepository.findById(id)
+                .orElseThrow(
+                        () -> new Exception("product is not found ")
+                );
 
         product.setName(productDTO.getName());
-        product.setDescription(product.getDescription());
-        product.setSku(product.getSku());
-        product.setImage(product.getImage());
-        product.setMrp(product.getMrp());
-        product.setSellingPrice(product.getSellingPrice());
-        product.setBrand(product.getBrand());
+        product.setDescription(productDTO.getDescription());
+        product.setSku(productDTO.getSku());
+        product.setImage(productDTO.getImage());
+        product.setMrp(productDTO.getMrp());
+        product.setSellingPrice(productDTO.getSellingPrice());
+        product.setBrand(productDTO.getBrand());
         product.setUpdatedAt(LocalDateTime.now());
 
-        if(productDTO.getCategoryId()!= null ){
+        if (productDTO.getCategoryId() != null) {
+
             Category category = categoryRepository.findById(
                     productDTO.getCategoryId()
             ).orElseThrow(
                     () -> new Exception("Category Not Found")
             );
-            product.setCategory(category);
 
+            product.setCategory(category);
         }
+
         Product savedProduct = productRepository.save(product);
-        return null;
+
+        return ProductMapper.toDTO(savedProduct);
     }
 
     @Override

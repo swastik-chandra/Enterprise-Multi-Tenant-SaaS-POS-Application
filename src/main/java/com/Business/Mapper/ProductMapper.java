@@ -15,13 +15,23 @@ public class ProductMapper {
                 .mrp(product.getMrp())
                 .sellingPrice(product.getSellingPrice())
                 .brand(product.getBrand())
-                .category(CategoryMapper.toDTO(product.getCategory()))
-                .storeId(product.getStore() != null ? product.getStore().getId() : null)
+                .category(
+                        CategoryMapper.toDTO(product.getCategory())
+                )
+                .categoryId(
+                        product.getCategory() != null
+                                ? product.getCategory().getId()
+                                : null
+                )
+                .storeId(
+                        product.getStore() != null
+                                ? product.getStore().getId()
+                                : null
+                )
                 .image(product.getImage())
                 .createdAt(product.getCreatedAt())
                 .updatedAt(product.getUpdatedAt())
                 .build();
-        //       .categoryId(product.ge())
     }
 
     public static Product toEntity(ProductDTO productDTO,
